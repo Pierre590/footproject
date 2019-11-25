@@ -2,9 +2,9 @@
 
 <div class="container">
     <div class="row">
-        <?php foreach ($president as $index => $pres) { ?>
+        <?php foreach ($coachs as $index => $pres) { ?>
             <div class="col-md-4 mt-3 ">
-                <?php echo $pres['president']; ?>
+                <?php echo $pres['name']; ?>
             </div>
         <?php } ?>
     </div>
