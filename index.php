@@ -8,6 +8,12 @@ if ($path === 'teams') {
 } else if ($path === 'coach') {
     require('controller/coach.php');
     coach();
+}else if ($path === 'team') {
+    require('controller/team.php');
+    $idTeam = $_GET['id'];
+    team($idTeam);
 }
+
+
 
 ?>

@@ -10,3 +10,33 @@ body {
     display: block;
     margin: auto;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 100%;
+    max-width: 100px;
+    height:auto;
+}
+
+.tronche {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-top2 {
+    width: 100%;
+    max-width: 175px;
+    height:auto;
+}
+
+.card-img-top3 {
+    width: 100%;
+    max-width: 400px;
+    height:auto;
+}
