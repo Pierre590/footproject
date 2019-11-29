@@ -14,6 +14,44 @@
             </div>
         </div>
     </div>
+    <p>
+      <a class="btn btn-dark mt-3" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Saison</a>
+    </p>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+              <div class="row">
+                  <div class="container">
+                      <table class="table table-dark text-center text-white mt-3">
+                          <thead>
+                            <tr>
+                              <th scope="col">Journée</th>
+                              <th scope="col">A domicile</th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col">Challenger</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <?php foreach ($matchsPlayed as $index => $match) { ?>
+                                  <tr>
+                                    <th scope="row"><?php echo $match['day']; ?></th>
+                                    <td><?php echo $match['team_home']; ?></td>
+                                    <td><?php echo $match['score_home']; ?></td>
+                                    <td><?php echo $match['score_away']; ?></td>
+                                    <td><?php echo $match['team_away']; ?></td>
+                                  </tr>
+                              <?php } ?>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
 <div class="container">
     <div class="row">

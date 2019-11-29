@@ -42,9 +42,14 @@ body {
 }
 
 .test {
-    border-radius:50%;
+    border-radius:40px;
 }
 
 .test1 {
     border-radius:30px;
+    background-image: url("stade.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 }

@@ -21,6 +21,43 @@ function getCoachs ($id)
     return $team->fetch();
 }
 
+/*function getMatchs ($id)
+{
+    $db = dbConnect();
+
+    $team = $db->prepare('SELECT * FROM matchs WHERE id_team_home = ' . $id . ' OR id_team_away = ' . $id);
+    $team->execute();
+    return $team->fetchAll();
+}*/
+
+
+function getReqMatchs($idTeam) { //la fonction servira a alimenter les deux suivantes
+  return 'SELECT
+    matchs.*, th.name AS team_home, ta.name AS team_away
+    FROM matchs
+    INNER JOIN teams AS th ON th.id = matchs.id_team_home
+    INNER JOIN teams AS ta ON ta.id = matchs.id_team_away
+    WHERE (th.id = ' . $idTeam . ' OR ta.id = ' . $idTeam . ') ';
+}
+
+function getMachsPlayed($idTeam) {
+  $db = dbConnect();
+  $request = $db->prepare(getReqMatchs($idTeam) . 'AND score_away IS NOT NULL');
+  $request-> execute();
+  $data = $request->fetchAll();
+  return $data;
+}
+function getMachsNotPlayed($idTeam) {
+  global $reqMatch;
+  $db = dbConnect();
+  $request = $db->prepare(getReqMatchs($idTeam) . 'AND score_away IS NULL');
+  $request-> execute();
+  $data = $request->fetchAll();
+  return $data;
+}
+
+
+
 
 function getPlayers($idTeam)
 {

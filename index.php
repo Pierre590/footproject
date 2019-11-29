@@ -12,6 +12,10 @@ if ($path === 'teams') {
     require('controller/team.php');
     $idTeam = $_GET['id'];
     team($idTeam);
+}else if ($path === 'matchs') {
+    require('controller/team.php');
+    $idTeam = $_GET['id'];
+    matchs($idTeam);
 }
 
 
